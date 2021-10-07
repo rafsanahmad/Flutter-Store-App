@@ -1,6 +1,6 @@
 # cupertino_store
 
-A fultter project to demostrate a store.
+A fultter project to demonstrate a store application.
 
 ## Getting Started
 
