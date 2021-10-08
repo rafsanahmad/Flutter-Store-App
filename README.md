@@ -1,4 +1,4 @@
-# cupertino_store
+# Mina's Store
 
 A fultter project to demonstrate a store application.
 
