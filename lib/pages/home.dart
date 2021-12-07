@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
-import 'package:mina_store/product_list_tab.dart';
-import 'package:mina_store/search_tab.dart';
-import 'package:mina_store/shopping_cart_tab.dart';
+import 'package:mina_store/pages/product_list_tab.dart';
+import 'package:mina_store/pages/search_tab.dart';
+import 'package:mina_store/pages/shopping_cart_tab.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);

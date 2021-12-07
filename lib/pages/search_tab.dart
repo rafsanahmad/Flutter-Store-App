@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:mina_store/theme/colors.dart';
 import 'package:provider/provider.dart';
 
-import 'model/app_state_model.dart';
-import 'product_row_item.dart';
-import 'search_bar.dart';
+import '../model/app_state_model.dart';
+import '../ui/product_row_item.dart';
+import '../ui/search_bar.dart';
 
 class SearchTab extends StatefulWidget {
   const SearchTab({Key? key}) : super(key: key);

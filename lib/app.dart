@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:mina_store/home.dart';
+import 'package:mina_store/pages/home.dart';
 import 'package:mina_store/theme/themes.dart';
 
-import 'login.dart';
+import 'pages/login.dart';
 
 class MinaStoreApp extends StatelessWidget {
   const MinaStoreApp({Key? key}) : super(key: key);

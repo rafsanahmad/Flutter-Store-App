@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
-import 'model/app_state_model.dart';
-import 'model/product.dart';
+import '../model/app_state_model.dart';
+import '../model/product.dart';
 
 const double _kDateTimePickerHeight = 216;
 

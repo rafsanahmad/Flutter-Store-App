@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:mina_store/theme/colors.dart';
 import 'package:provider/provider.dart';
 
-import 'model/app_state_model.dart';
-import 'model/product.dart';
+import '../model/app_state_model.dart';
+import '../model/product.dart';
 
 class ProductRowItem extends StatelessWidget {
   const ProductRowItem({
