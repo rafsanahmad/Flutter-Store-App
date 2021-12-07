@@ -1,11 +1,13 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'product_list_tab.dart';
-import 'search_tab.dart';
-import 'shopping_cart_tab.dart';
+import 'package:mina_store/home.dart';
+import 'package:mina_store/theme/themes.dart';
 
-class CupertinoStoreApp extends StatelessWidget {
-  const CupertinoStoreApp({Key? key}) : super(key: key);
+import 'login.dart';
+
+class MinaStoreApp extends StatelessWidget {
+  const MinaStoreApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,62 +16,23 @@ class CupertinoStoreApp extends StatelessWidget {
     SystemChrome.setPreferredOrientations(
         [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
 
-    return const CupertinoApp(
-      theme: CupertinoThemeData(brightness: Brightness.light),
-      home: CupertinoStoreHomePage(),
+    return MaterialApp(
+      home: const HomePage(),
+      initialRoute: '/login',
+      onGenerateRoute: _getRoute,
+      theme: appTheme,
     );
   }
 }
 
-class CupertinoStoreHomePage extends StatelessWidget {
-  const CupertinoStoreHomePage({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return CupertinoTabScaffold(
-      tabBar: CupertinoTabBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.home),
-            label: 'Products',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.search),
-            label: 'Search',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.shopping_cart),
-            label: 'Cart',
-          ),
-        ],
-      ),
-      tabBuilder: (context, index) {
-        late final CupertinoTabView returnValue;
-        switch (index) {
-          case 0:
-            returnValue = CupertinoTabView(builder: (context) {
-              return const CupertinoPageScaffold(
-                child: ProductListTab(),
-              );
-            });
-            break;
-          case 1:
-            returnValue = CupertinoTabView(builder: (context) {
-              return const CupertinoPageScaffold(
-                child: SearchTab(),
-              );
-            });
-            break;
-          case 2:
-            returnValue = CupertinoTabView(builder: (context) {
-              return const CupertinoPageScaffold(
-                child: ShoppingCartTab(),
-              );
-            });
-            break;
-        }
-        return returnValue;
-      },
-    );
+Route<dynamic>? _getRoute(RouteSettings settings) {
+  if (settings.name != '/login') {
+    return null;
   }
+
+  return MaterialPageRoute<void>(
+    settings: settings,
+    builder: (BuildContext context) => const LoginPage(),
+    fullscreenDialog: true,
+  );
 }
