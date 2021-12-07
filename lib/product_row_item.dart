@@ -1,9 +1,10 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:mina_store/theme/colors.dart';
 import 'package:provider/provider.dart';
 
 import 'model/app_state_model.dart';
 import 'model/product.dart';
-import 'styles.dart';
 
 class ProductRowItem extends StatelessWidget {
   const ProductRowItem({
@@ -17,6 +18,7 @@ class ProductRowItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final ThemeData theme = Theme.of(context);
     final row = SafeArea(
       top: false,
       bottom: false,
@@ -47,13 +49,10 @@ class ProductRowItem extends StatelessWidget {
                 children: <Widget>[
                   Text(
                     product.name,
-                    style: Styles.productRowItemName,
+                    style: theme.textTheme.headline6,
                   ),
                   const Padding(padding: EdgeInsets.only(top: 8)),
-                  Text(
-                    '\$${product.price}',
-                    style: Styles.productRowItemPrice,
-                  )
+                  Text('\$${product.price}', style: theme.textTheme.caption)
                 ],
               ),
             ),
@@ -87,7 +86,7 @@ class ProductRowItem extends StatelessWidget {
           ),
           child: Container(
             height: 1,
-            color: Styles.productRowDivider,
+            color: colorDivider,
           ),
         ),
       ],

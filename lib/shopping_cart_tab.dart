@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
 import 'model/app_state_model.dart';
 import 'model/product.dart';
-import 'styles.dart';
 
 const double _kDateTimePickerHeight = 216;
 
@@ -99,6 +99,7 @@ class _ShoppingCartTabState extends State<ShoppingCartTab> {
   }
 
   Widget _buildDateAndTimePicker(BuildContext context) {
+    final ThemeData theme = Theme.of(context);
     return Column(
       children: <Widget>[
         Row(
@@ -106,8 +107,8 @@ class _ShoppingCartTabState extends State<ShoppingCartTab> {
           children: <Widget>[
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
-              children: const <Widget>[
-                Icon(
+              children: <Widget>[
+                const Icon(
                   CupertinoIcons.clock,
                   color: CupertinoColors.lightBackgroundGray,
                   size: 28,
@@ -115,13 +116,13 @@ class _ShoppingCartTabState extends State<ShoppingCartTab> {
                 SizedBox(width: 6),
                 Text(
                   'Delivery time',
-                  style: Styles.deliveryTimeLabel,
+                  style: theme.textTheme.bodyText1,
                 ),
               ],
             ),
             Text(
               DateFormat.yMMMd().add_jm().format(dateTime),
-              style: Styles.deliveryTime,
+              style: theme.textTheme.bodyText1,
             ),
           ],
         ),
@@ -142,7 +143,8 @@ class _ShoppingCartTabState extends State<ShoppingCartTab> {
   }
 
   SliverChildBuilderDelegate _buildSliverChildBuilderDelegate(
-      AppStateModel model) {
+      AppStateModel model, BuildContext context) {
+    final ThemeData theme = Theme.of(context);
     return SliverChildBuilderDelegate(
       (context, index) {
         final productIndex = index - 4;
@@ -190,17 +192,17 @@ class _ShoppingCartTabState extends State<ShoppingCartTab> {
                         Text(
                           'Shipping '
                           '${_currencyFormat.format(model.shippingCost)}',
-                          style: Styles.productRowItemPrice,
+                          style: theme.textTheme.bodyText1,
                         ),
                         const SizedBox(height: 6),
                         Text(
                           'Tax ${_currencyFormat.format(model.tax)}',
-                          style: Styles.productRowItemPrice,
+                          style: theme.textTheme.caption,
                         ),
                         const SizedBox(height: 6),
                         Text(
                           'Total ${_currencyFormat.format(model.totalCost)}',
-                          style: Styles.productRowTotal,
+                          style: theme.textTheme.caption,
                         ),
                       ],
                     )
@@ -227,7 +229,7 @@ class _ShoppingCartTabState extends State<ShoppingCartTab> {
               top: false,
               minimum: const EdgeInsets.only(top: 4),
               sliver: SliverList(
-                delegate: _buildSliverChildBuilderDelegate(model),
+                delegate: _buildSliverChildBuilderDelegate(model, context),
               ),
             )
           ],
@@ -255,6 +257,7 @@ class ShoppingCartItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final ThemeData theme = Theme.of(context);
     final row = SafeArea(
       top: false,
       bottom: false,
@@ -289,11 +292,11 @@ class ShoppingCartItem extends StatelessWidget {
                       children: <Widget>[
                         Text(
                           product.name,
-                          style: Styles.productRowItemName,
+                          style: theme.textTheme.caption,
                         ),
                         Text(
                           formatter.format(quantity * product.price),
-                          style: Styles.productRowItemName,
+                          style: theme.textTheme.bodyText1,
                         ),
                       ],
                     ),
@@ -303,7 +306,7 @@ class ShoppingCartItem extends StatelessWidget {
                     Text(
                       '${quantity > 1 ? '$quantity x ' : ''}'
                       '${formatter.format(product.price)}',
-                      style: Styles.productRowItemPrice,
+                      style: theme.textTheme.bodyText1,
                     )
                   ],
                 ),

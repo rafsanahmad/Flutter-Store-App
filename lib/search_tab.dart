@@ -1,10 +1,11 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:mina_store/theme/colors.dart';
 import 'package:provider/provider.dart';
 
 import 'model/app_state_model.dart';
 import 'product_row_item.dart';
 import 'search_bar.dart';
-import 'styles.dart';
 
 class SearchTab extends StatefulWidget {
   const SearchTab({Key? key}) : super(key: key);
@@ -54,10 +55,9 @@ class _SearchTabState extends State<SearchTab> {
   Widget build(BuildContext context) {
     final model = Provider.of<AppStateModel>(context);
     final results = model.search(_terms);
-
     return DecoratedBox(
       decoration: const BoxDecoration(
-        color: Styles.scaffoldBackground,
+        color: colorSurfaceWhite,
       ),
       child: SafeArea(
         child: Column(
