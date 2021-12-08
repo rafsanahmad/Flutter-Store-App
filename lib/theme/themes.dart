@@ -9,7 +9,7 @@ ThemeData _buildAppTheme() {
   return base.copyWith(
     colorScheme: base.colorScheme.copyWith(
       primary: colorPrimary,
-      onPrimary: colorTeal700,
+      onPrimary: colorOnPrimary,
       secondary: colorAccent,
       error: colorErrorRed,
     ),
