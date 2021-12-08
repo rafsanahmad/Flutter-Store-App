@@ -1,10 +1,8 @@
 import 'package:flutter/foundation.dart' as foundation;
+import 'package:mina_store/utils/constants.dart';
 
 import 'product.dart';
 import 'products_repository.dart';
-
-double _salesTaxRate = 0.06;
-double _shippingCostPerItem = 7;
 
 class AppStateModel extends foundation.ChangeNotifier {
   // All the available products.
@@ -43,7 +41,7 @@ class AppStateModel extends foundation.ChangeNotifier {
 
   // Total shipping cost for the items in the cart.
   double get shippingCost {
-    return _shippingCostPerItem *
+    return shippingCostPerItem *
         _productsInCart.values.fold(0.0, (accumulator, itemCount) {
           return accumulator + itemCount;
         });
@@ -51,7 +49,7 @@ class AppStateModel extends foundation.ChangeNotifier {
 
   // Sales tax for the items in the cart
   double get tax {
-    return subtotalCost * _salesTaxRate;
+    return subtotalCost * salesTaxRate;
   }
 
   // Total cost to order everything in the cart.
