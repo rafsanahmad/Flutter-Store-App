@@ -43,12 +43,12 @@ class _LoginPageState extends State<LoginPage> {
                   fit: BoxFit.contain, height: 100, width: 200),
               const SizedBox(height: 20.0),
               Text(
-                'SHOP APP',
+                'Mina\'s Store',
                 style: Theme.of(context).textTheme.headline5,
               ),
             ],
           ),
-          const SizedBox(height: 120.0),
+          const SizedBox(height: 50.0),
           //Username
           TextField(
             controller: _usernameController,
