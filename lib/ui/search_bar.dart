@@ -18,7 +18,7 @@ class SearchBar extends StatelessWidget {
     final ThemeData theme = Theme.of(context);
     return DecoratedBox(
       decoration: BoxDecoration(
-        color: colorSurfaceWhite,
+        color: searchBackGround,
         borderRadius: BorderRadius.circular(10),
       ),
       child: Padding(
