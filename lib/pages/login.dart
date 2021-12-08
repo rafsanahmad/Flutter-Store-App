@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mina_store/theme/colors.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -56,7 +57,7 @@ class _LoginPageState extends State<LoginPage> {
               labelText: 'Username',
               labelStyle: TextStyle(
                   color: _usernameFocusNode.hasFocus
-                      ? Theme.of(context).colorScheme.secondary
+                      ? colorPrimaryDark
                       : _unfocusedColor),
             ),
             focusNode: _usernameFocusNode,
@@ -70,7 +71,7 @@ class _LoginPageState extends State<LoginPage> {
               labelText: 'Password',
               labelStyle: TextStyle(
                   color: _passwordFocusNode.hasFocus
-                      ? Theme.of(context).colorScheme.secondary
+                      ? colorPrimaryDark
                       : _unfocusedColor),
             ),
             obscureText: true,

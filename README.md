@@ -14,4 +14,6 @@ A fultter project to demonstrate a shopping cart application.
 
 # Implementation
 
-![](images/shop_app.gif)
+iOS                       |  Android                 |
+:------------------------:|:------------------------:|
+![](images/shop_app_ios.gif)    |  ![](images/shop_app.gif)  
