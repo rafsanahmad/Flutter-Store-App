@@ -36,7 +36,7 @@ class SearchBar extends StatelessWidget {
               child: CupertinoTextField(
                 controller: controller,
                 focusNode: focusNode,
-                style: theme.textTheme.headline6,
+                style: theme.textTheme.titleLarge,
                 cursorColor: searchCursorColor,
                 decoration: null,
               ),

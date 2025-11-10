@@ -55,11 +55,11 @@ class ShoppingCartItem extends StatelessWidget {
                       children: <Widget>[
                         Text(
                           product.name,
-                          style: theme.textTheme.caption,
+                          style: theme.textTheme.bodySmall,
                         ),
                         Text(
                           formatter.format(quantity * product.price),
-                          style: theme.textTheme.bodyText1,
+                          style: theme.textTheme.bodyLarge,
                         ),
                       ],
                     ),
@@ -69,7 +69,7 @@ class ShoppingCartItem extends StatelessWidget {
                     Text(
                       '${quantity > 1 ? '$quantity x ' : ''}'
                       '${formatter.format(product.price)}',
-                      style: theme.textTheme.bodyText1,
+                      style: theme.textTheme.bodyLarge,
                     )
                   ],
                 ),

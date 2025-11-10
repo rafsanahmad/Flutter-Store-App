@@ -5,7 +5,7 @@ import 'package:provider/provider.dart';
 
 import '../model/app_state_model.dart';
 import '../ui/product_row_item.dart';
-import '../ui/search_bar.dart';
+import '../ui/search_bar.dart' as custom;
 
 class SearchPage extends StatefulWidget {
   const SearchPage({Key? key}) : super(key: key);
@@ -44,7 +44,7 @@ class _SearchTabState extends State<SearchPage> {
   Widget _buildSearchBox() {
     return Padding(
       padding: const EdgeInsets.all(8),
-      child: SearchBar(
+      child: custom.SearchBar(
         controller: _controller,
         focusNode: _focusNode,
       ),

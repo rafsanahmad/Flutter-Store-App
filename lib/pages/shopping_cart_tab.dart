@@ -115,13 +115,13 @@ class _ShoppingCartTabState extends State<ShoppingCartTab> {
                 SizedBox(width: 6),
                 Text(
                   'Delivery time',
-                  style: theme.textTheme.bodyText1,
+                  style: theme.textTheme.bodyLarge,
                 ),
               ],
             ),
             Text(
               DateFormat.yMMMd().add_jm().format(dateTime),
-              style: theme.textTheme.bodyText1,
+              style: theme.textTheme.bodyLarge,
             ),
           ],
         ),
@@ -191,17 +191,17 @@ class _ShoppingCartTabState extends State<ShoppingCartTab> {
                         Text(
                           'Shipping '
                           '${_currencyFormat.format(model.shippingCost)}',
-                          style: theme.textTheme.bodyText1,
+                          style: theme.textTheme.bodyLarge,
                         ),
                         const SizedBox(height: 6),
                         Text(
                           'Tax ${_currencyFormat.format(model.tax)}',
-                          style: theme.textTheme.caption,
+                          style: theme.textTheme.bodySmall,
                         ),
                         const SizedBox(height: 6),
                         Text(
                           'Total ${_currencyFormat.format(model.totalCost)}',
-                          style: theme.textTheme.caption,
+                          style: theme.textTheme.bodySmall,
                         ),
                       ],
                     )

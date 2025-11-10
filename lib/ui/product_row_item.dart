@@ -49,10 +49,10 @@ class ProductRowItem extends StatelessWidget {
                 children: <Widget>[
                   Text(
                     product.name,
-                    style: theme.textTheme.headline6,
+                    style: theme.textTheme.titleLarge,
                   ),
                   const Padding(padding: EdgeInsets.only(top: 8)),
-                  Text('\$${product.price}', style: theme.textTheme.caption)
+                  Text('\$${product.price}', style: theme.textTheme.bodySmall)
                 ],
               ),
             ),

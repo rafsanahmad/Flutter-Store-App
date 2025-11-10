@@ -44,7 +44,7 @@ class ProductCard extends StatelessWidget {
             children: <Widget>[
               Text(
                 product.name,
-                style: theme.textTheme.headline6,
+                style: theme.textTheme.titleLarge,
                 softWrap: true,
                 overflow: TextOverflow.ellipsis,
                 maxLines: 1,
@@ -55,7 +55,7 @@ class ProductCard extends StatelessWidget {
                 children: <Widget>[
                   Text(
                     formatter.format(product.price),
-                    style: theme.textTheme.subtitle2,
+                    style: theme.textTheme.titleMedium,
                   ),
                   const SizedBox(width: 10.0),
                   CupertinoButton(

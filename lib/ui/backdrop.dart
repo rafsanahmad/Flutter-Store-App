@@ -100,7 +100,6 @@ class _BackdropState extends State<Backdrop>
           },
         ),
       ],
-      backwardsCompatibility: false,
     );
     return Scaffold(
       appBar: appBar,
